@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ehs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/game/ehs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e8316" height="400.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a81f1f" height="400.0" layoutX="1000.0" stroke="BLACK" strokeType="INSIDE" width="251.0" />
+      <ImageView fx:id="player1" fitHeight="150.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player2" fitHeight="150.0" fitWidth="100.0" layoutX="120.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player3" fitHeight="150.0" fitWidth="100.0" layoutX="225.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player4" fitHeight="150.0" fitWidth="100.0" layoutX="330.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player5" fitHeight="150.0" fitWidth="100.0" layoutX="435.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player6" fitHeight="150.0" fitWidth="100.0" layoutX="540.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer6" fitHeight="150.0" fitWidth="100.0" layoutX="887.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer5" fitHeight="150.0" fitWidth="100.0" layoutX="781.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer4" fitHeight="150.0" fitWidth="100.0" layoutX="676.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer3" fitHeight="150.0" fitWidth="100.0" layoutX="570.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer2" fitHeight="150.0" fitWidth="100.0" layoutX="462.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealer1" fitHeight="150.0" fitWidth="100.0" layoutX="355.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/emptySlot.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="689.0" layoutY="38.0" prefHeight="102.0" prefWidth="283.0" text="&lt;--- Your Hand" textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="34.0" />
+         </font>
+         <effect>
+            <Glow level="0.48" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="3.0" layoutY="260.0" prefHeight="102.0" prefWidth="353.0" text="Dealer's Hand ---&gt;" textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="34.0" />
+         </font>
+         <effect>
+            <Glow level="0.48" />
+         </effect>
+      </Label>
+      <Button layoutX="355.0" layoutY="178.0" mnemonicParsing="false" onAction="#hit" prefHeight="44.0" prefWidth="98.0" text="Hit">
+         <font>
+            <Font name="Comic Sans MS Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="570.0" layoutY="178.0" mnemonicParsing="false" onAction="#stand" prefHeight="44.0" prefWidth="98.0" text="Stand">
+         <font>
+            <Font name="Comic Sans MS Bold" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="802.0" layoutY="113.0" prefHeight="36.0" prefWidth="54.0" text="Count: " textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+         <effect>
+            <Glow level="0.55" />
+         </effect>
+      </Label>
+      <Label layoutX="52.0" layoutY="344.0" prefHeight="36.0" prefWidth="54.0" text="Count: " textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+         <effect>
+            <Glow level="0.55" />
+         </effect>
+      </Label>
+      <Label fx:id="playerCount" layoutX="856.0" layoutY="120.0" text="0" textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+         <effect>
+            <Glow level="0.4" />
+         </effect>
+      </Label>
+      <Label fx:id="dealerCount" layoutX="106.0" layoutY="351.0" text="0" textFill="#bfbfbf">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+         <effect>
+            <Glow level="0.4" />
+         </effect>
+      </Label>
+      <ImageView fx:id="deckZone" fitHeight="150.0" fitWidth="100.0" layoutX="1076.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/blue_back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealingCard" fitHeight="150.0" fitWidth="100.0" layoutX="1076.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/blue_back.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="winLose" layoutY="400.0" prefHeight="400.0" prefWidth="1250.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="1250.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="RED" />
+                        <Stop color="#0062ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Label fx:id="outcome" alignment="CENTER" prefHeight="410.0" prefWidth="1250.0" text="Winner/Loser" textFill="#bfbfbf">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="39.0" />
+               </font>
+               <effect>
+                  <Glow level="0.75" />
+               </effect>
+            </Label>
+            <Button alignment="CENTER" layoutX="556.0" layoutY="291.0" mnemonicParsing="false" onAction="#restart" prefHeight="53.0" prefWidth="138.0" text="Play Again" wrapText="true" />
+            <Button layoutX="737.0" layoutY="291.0" mnemonicParsing="false" onAction="#quit" prefHeight="53.0" prefWidth="138.0" text="Quit" />
+            <Button alignment="CENTER" layoutX="378.0" layoutY="291.0" mnemonicParsing="false" onAction="#showBetting" prefHeight="53.0" prefWidth="138.0" text="Change Bet" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainMenu" prefHeight="400.0" prefWidth="1250.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="1250.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#ffa600" />
+                        <Stop color="RED" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label alignment="CENTER" layoutX="169.0" layoutY="115.0" prefHeight="170.0" prefWidth="913.0" text="Welcome to Black Jack!" textFill="#bfbfbf">
+               <effect>
+                  <Glow level="0.65" />
+               </effect>
+               <font>
+                  <Font name="Unispace-Bold" size="58.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="126.0" layoutY="212.0" prefHeight="102.0" prefWidth="1000.0" text="The goal of the game is to get a count as close to 21 without goin over. Different cards add different amounts to your count. The card will give its face value, if it is a king, queen or jack it gives a count of 10, and if its an ace it gives a count of 11." textAlignment="CENTER" textFill="#bfbfbf" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Trebuchet MS" size="18.0" />
+               </font>
+               <effect>
+                  <Glow level="0.58" />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Button layoutX="599.0" layoutY="337.0" mnemonicParsing="false" onAction="#startGame" text="Begin" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="betWindow" layoutX="-200.0" prefHeight="400.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+               <fill>
+                  <LinearGradient endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop color="#f6ff00" />
+                        <Stop color="#ff00d9" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <TextField fx:id="betInput" alignment="CENTER" layoutX="51.0" layoutY="151.0" prefHeight="62.0" prefWidth="98.0" promptText="Bet Here" text="0">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="62.0" layoutX="44.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="112.0">
+               <fill>
+                  <LinearGradient endX="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#868686" />
+                        <Stop color="#868686" offset="0.007662835249042145" />
+                        <Stop color="#ff8888" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Rectangle arcHeight="30.0" arcWidth="5.0" fill="TRANSPARENT" height="36.0" layoutX="9.0" layoutY="270.0" stroke="#c9c9c9" strokeWidth="4.0" width="184.0" />
+            <Label layoutX="48.0" layoutY="21.0" text="Current Balance">
+               <effect>
+                  <Glow level="0.93" />
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="270.0" onMouseClicked="#confirmBet" prefHeight="36.0" prefWidth="188.0" text="Set Your Bet" textFill="#bfbfbf">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <effect>
+                  <Glow level="0.84" />
+               </effect>
+            </Label>
+            <Label fx:id="balance" alignment="CENTER" layoutY="49.0" prefHeight="25.0" prefWidth="200.0" text="bal">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+               <effect>
+                  <Glow level="0.7" />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
