@@ -71,17 +71,26 @@ public class Controller {
         deck.shuffle();
     }
 
+    /*
+        Closes the program
+     */
     @FXML
     public void quit(){
         quit = true;
     }
 
+    /*
+        Used to reset the screen position in specific cases.
+     */
     @FXML
     public void fixScreen(){
         showWinLose.stop();
         winLose.setLayoutY(0);
     }
 
+    /*
+        Sets up the game to begin play
+     */
     @FXML
     public void startGame(){
         balance.setText(String.valueOf(bal));
@@ -90,6 +99,9 @@ public class Controller {
         begin();
     }
 
+    /*
+        Slides the menu out of view.
+     */
     public void hideMenuSlide(){
         menuYpos = mainMenu.getLayoutY();
         sliding = true;
@@ -105,6 +117,10 @@ public class Controller {
         hideMenu.start();
     }
 
+
+    /*
+        Slides the win/lose end screen out of view.
+     */
     public void hideWinLoseSlide(){
         menuYpos = winLose.getLayoutY();
         sliding = true;
@@ -120,6 +136,9 @@ public class Controller {
         hideWinLose.start();
     }
 
+    /*
+        Slides the win/lose end screen into view.
+     */
     public void showWinLoseSlide(){
         menuYpos = winLose.getLayoutY();
         sliding = true;
@@ -136,6 +155,9 @@ public class Controller {
         showWinLose.start();
     }
 
+    /*
+        Resets the various animation timers used to slide the menus in and out of view.
+     */
     public void stopAnimationTimer(AnimationTimer timer){
         System.out.println("stop initiated");
         if(timer == deal)
@@ -157,6 +179,9 @@ public class Controller {
         sliding = false;
     }
 
+    /*
+        Slides the betting menu into view.
+     */
     public void showBetting(){
         if(!betting) {
             betting = true;
@@ -176,6 +201,9 @@ public class Controller {
         }
     }
 
+    /*
+        Slides the betting menu out of view.
+     */
     public void hideBetting(){
         menuXpos = betWindow.getLayoutX();
         hideBetting = new AnimationTimer() {
@@ -193,12 +221,19 @@ public class Controller {
         hideBetting.start();
     }
 
+    /*
+        Sets the user's bet and hides the betting menu.
+     */
     @FXML
     public void confirmBet(){
         bet = Integer.valueOf(betInput.getText());
         hideBetting();
     }
 
+
+    /*
+        Deals out the first cards to the player and dealer.
+     */
     public void begin(){
         doneDealing = false;
         beginDraws = new AnimationTimer() {
@@ -229,6 +264,9 @@ public class Controller {
         beginDraws.start();
     }
 
+    /*
+        Deals an additional card to the user.
+     */
     @FXML
     public void hit(){
         if(!dealing)
@@ -236,6 +274,9 @@ public class Controller {
         checkBJandOver('p');
     }
 
+    /*
+        Ends the users turn and turns over the dealer's card and draws another if necessary.
+     */
     @FXML
     public void stand(){
         if(!dealing) {
@@ -259,6 +300,9 @@ public class Controller {
         }
     }
 
+    /*
+        Finds the winner and sets the proper text for the win/lose screen.
+     */
     public void checkWinner(){
         if (countPlayer > countDealer && !gameOver && countDealer > 16) {
             outcome.setText("Congratulations you beat the dealer!\n Dealer's Count = " + countDealer + "   Your Count = " + countPlayer + "\nYou Won $" + bet);
@@ -273,6 +317,10 @@ public class Controller {
         }
     }
 
+    /*
+        Deals a card to the specified player.
+        @param - char specifying player or dealer
+     */
     public void dealCard(char user){
         dealing = true;
         xPos = dealingCard.getLayoutX();
@@ -306,6 +354,10 @@ public class Controller {
         deal.start();
     }
 
+    /*
+        Finds the x-position the next card should be in.
+        @return - the x-position of the next player card slot
+     */
     public double getCardSlotX(){
         switch (playerSlot){
             case 1:
@@ -324,6 +376,10 @@ public class Controller {
         return 0;
     }
 
+    /*
+        Finds the y-position the next card should be in.
+        @return - the y-position of the next player card slot
+     */
     public double getCardSlotY(){
         switch (playerSlot){
             case 1:
@@ -342,6 +398,10 @@ public class Controller {
         return 0;
     }
 
+    /*
+        Finds the x-position the next dealer card should be in.
+        @return - the x-position of the next dealer slot
+     */
     public double getDealerSlotX(){
         switch (dealerSlot){
             case 1:
@@ -360,6 +420,10 @@ public class Controller {
         return 0;
     }
 
+    /*
+        Finds the y-position the next dealer card should be in.
+        @return - the y-position of the next dealer slot
+     */
     public double getDealerSlotY(){
         switch (dealerSlot){
             case 1:
@@ -378,6 +442,10 @@ public class Controller {
         return 0;
     }
 
+    /*
+        Draws a card from the deck and assigns it to either the player or dealer.
+        @param - char specifying the player or the dealer
+     */
     public void drawCard(char user){
         dealingCard.setLayoutX(deckZone.getLayoutX());
         dealingCard.setLayoutY(deckZone.getLayoutY());
@@ -454,6 +522,10 @@ public class Controller {
         checkBJandOver(user);
     }
 
+    /*
+        Checks for a blackjack or if the specified user has gone over.
+        @param - char specifying player or dealer
+     */
     public void checkBJandOver(char user){
         switch (user){
             case 'p': {
@@ -473,6 +545,10 @@ public class Controller {
         }
     }
 
+    /*
+        Sets the outcome text to correctly display which user has gone over.
+        @param - char specify whether the player or dealer has gone over
+     */
     public void over(char user){
         switch(user){
             case 'p':{
@@ -492,6 +568,10 @@ public class Controller {
         }
     }
 
+    /*
+        Sets the outcome text to correctly display which user has gotten a black jack.
+        @param - char specify whether the player or dealer has gotten a black jack
+     */
     public void blackJack(char user){
         switch(user){
             case 'p':{
@@ -511,6 +591,9 @@ public class Controller {
         }
     }
 
+    /*
+        Resets all the timers, text labels, images, and booleans to begin a new game.
+     */
     @FXML
     public void restart(){
         if(!betting){
@@ -544,10 +627,18 @@ public class Controller {
         }
     }
 
+    /*
+        Sets the specified imageview slot to the back of the card image.
+        @param - the imageview to be assigned the image
+     */
     public void assignBack(ImageView slot){
         slot.setImage(new Image("game/images/blue_back.png"));
     }
 
+    /*
+        Sets the specified imageview slot to the image associated with the card drawn.
+        @param - the imageview to be assigned the card specific image
+     */
     public void assignCard(ImageView slot){
         String cardFace = card.face();
         switch(cardFace){
